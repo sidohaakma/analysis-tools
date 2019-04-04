@@ -2,16 +2,11 @@ name: single-measurements
 type: object
 key: _id
 properties:
-  _id:
+  row_id:
     type: integer
     description: An auto-incrementing number
     data:
       build: document_index
-  doc_type:
-    type: string
-    description: The document type
-    data:
-      value: single
   child_id:
     type: integer
     description: The unique identifier of the child

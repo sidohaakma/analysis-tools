@@ -1,0 +1,119 @@
+name: single-measurements
+type: object
+key: _id
+properties:
+  _id:
+    type: integer
+    description: An auto-incrementing number
+    data:
+      build: document_index
+  doc_type:
+    type: string
+    description: The document type
+    data:
+      value: single
+  child_id:
+    type: integer
+    description: The unique identifier of the child
+    data:
+      build: "chance.integer({ min: 1, max: 21 })"
+  cohort_id:
+    type: integer
+    description: The unique identifier of the cohort
+    data:
+      build: "chance.integer({ min: 101, max: 119 })"
+  coh_country:
+    type: integer
+    description: The country of the cohort
+    data:
+      build: "chance.integer({ min: 36, max: 826 })"
+  agebirth_m_y:
+    type: integer
+    description: Age of the child in years and months
+    data:
+      build: "chance.integer({ min: 1, max: 1000 })"
+  agebirth_m_d:
+    type: integer
+    description: Age of the child in months and days
+    data:
+      build: "chance.integer({ min: 500, max: 10000 })"
+  smk_t1:
+    type: integer
+    description: Does the mother smoke at 1st trimester
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  smk_t2:
+    type: integer
+    description: Does the mother smoke at 2nd trimester
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  smk_t3:
+    type: integer
+    description: Does the mother smoke at 3rd trimester
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  preg_smk:
+    type: integer
+    description: Smoking during pregnancy
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  preg_cig:
+    type: integer
+    description: How many cigarettes a day
+    data:
+      build: "chance.integer({ min: 0, max: 2 })"
+  outcome:
+    type: integer
+    description: Birth outcome
+    data:
+      build: "chance.integer({ min: 1, max: 6 })"
+  birth_month:
+    type: integer
+    description: Month of birth of the child
+    data:
+      build: "chance.integer({ min: 1, max: 12 })"
+  birth_year:
+    type: integer
+    description: Year of birth
+    data:
+      build: "chance.integer({ min: 1999, max: 2019 })"
+  sex:
+    type: integer
+    description: Sex of the child
+    data:
+      build: "chance.integer({ min: 1, max: 2 })"
+  plurality:
+    type: integer
+    description: Plurality
+    data:
+      build: "chance.integer({ min: 1, max: 3 })"
+  ga_bj:
+    type: integer
+    description: Gestational age (best judgement)
+    data:
+      build: "chance.integer({ min: 1, max: 1000 })"
+  birth_weight:
+    type: decimal
+    description: Weight of the child at birth
+    data:
+      build: "chance.floating({ min: 0, max: 30, fixed: 2 })"
+  birth_length:
+    type: decimal
+    description: Length of the child at birth
+    data:
+      build: "chance.floating({ min: 50, max: 150, fixed: 2 })"
+  breastfed_excl:
+    type: decimal
+    description: Exclusive breastfeeding
+    data:
+      build: "chance.floating({ min: 50, max: 150, fixed: 1 })"
+  breastfed_any:
+    type: decimal
+    description: Any breastfeeding
+    data:
+      build: "chance.floating({ min: 50, max: 150, fixed: 1 })"
+  breastfed_ever:
+    type: integer
+    description: Ever breastfed
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"

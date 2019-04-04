@@ -1,7 +1,7 @@
-# data
-Describes the data releases of the lifecycle catalogue
+# LifeCycle data 
+Describes the data releases of the lifecycle data dictionaries.
 
-## LifeCycle data releases
+## Data releases
 In this repository we keep track of different versions of the LifeCycle data dictionary
 > Please check: [version control of data dictionaries](dictionary/README.md).
 

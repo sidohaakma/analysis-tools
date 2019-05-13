@@ -1,9 +1,6 @@
-# LifeCycle data 
-Describes the data releases of the lifecycle data dictionaries.
-
-## Data releases
-In this repository we keep track of different versions of the LifeCycle data dictionary
-> Please check: [version control of data dictionaries](dictionary/README.md).
+# LifeCycle analysis tools
+This is toolbox for researchers to use. The following components are now incorporated.
+- fakedata generator
 
 ### Generate fake data
 You can also generate fake data based upon the different data dictionary versions that have been released.

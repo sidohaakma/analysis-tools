@@ -1,4 +1,4 @@
-name: all_measurements_v1
+name: all_measurements_v1_1
 type: object
 key:
   build: faker.random.uuid()
@@ -37,6 +37,11 @@ properties:
     description: Country of the cohort
     data:
       build: "chance.integer({ min: 36, max: 826 })"
+  recruit_age:
+    type: integer
+    description: Reqruitment age
+    data:
+      build: "chance.integer({ min: 1, max: 20 })"
   cob_m:
     type: integer
     description: Maternal country of birth
@@ -548,6 +553,96 @@ properties:
     data: 
       build: "chance.integer({ min: 1, max: 120 })"
 ## repeated measurements
+  cohab_0:
+    type: integer
+    description: cohabitation status at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_1:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_2:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_3:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_4:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_5:
+      type: integer
+      description: cohabitation status at 1 year
+      data: 
+          build: "chance.integer({ min: 1, max: 120 })"
+  cohab_6:
+      type: integer
+      description: cohabitation status at 1 year
+      data: 
+          build: "chance.integer({ min: 1, max: 120 })"
+  cohab_7:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_8:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_9:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_10:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_11:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_12:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_13:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_14:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_15:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_16:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cohab_17:
+    type: integer
+    description: cohabitation status at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
   occup_0:
     type: integer
     description: occupitation status at birth

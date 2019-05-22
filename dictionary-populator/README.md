@@ -1,8 +1,8 @@
-# Opal populator
+# Dictionary populator
 
 ##  Usage
 ```bash
-pip install opal-populator
+pip install dictionary-populator
 ```
 
 

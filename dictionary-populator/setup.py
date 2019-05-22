@@ -16,5 +16,7 @@ setup(
             'populator = populator.__main__:main'
         ]
     },
-    install_requires=['Opal==2.13.1', 'Click==7.0']
+    dependency_links = ["https://registry.molgenis.org/repository/pypi-all/opal-python-client"],
+    install_requires=['opal-python-client==2.13.1', 'Click==7.0'] 
+    
 )

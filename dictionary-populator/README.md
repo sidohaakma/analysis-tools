@@ -25,7 +25,13 @@ Deactivate the virtualenv
 deactivate
 ```
 
-Install the package within the virtual env
+Install the package within the virtual env. First you need to install the opal-client locally
+
+```bash
+export PYCURL_SSL_LIBRARY=openssl
+export LDFLAGS=-L/usr/local/opt/openssl/lib;export CPPFLAGS=-I/usr/local/opt/openssl/include;pip install opal-python-client --compi
+le --no-cache-dir -i https://registry.molgenis.org/repository/pypi-all/
+```
 
 ```bash
 python setup.py install --user
@@ -42,4 +48,10 @@ source env/bin/activate
 
 # install with wheel dist
 python setup.py bdist_wheel
+
+# upload it into the molgenis pypi registry
+twine 
 ```
+
+
+

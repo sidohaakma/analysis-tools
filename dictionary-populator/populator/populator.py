@@ -1,13 +1,12 @@
 #!python
 
-
 import opal.rest
 import opal.file
 import opal.import_xml
 
 import click
 import constants
-import rest
+import ws.rest
 
 from arguments import Arguments
 
@@ -18,6 +17,11 @@ from arguments import Arguments
     prompt=True,
     default='localhost:8080',
     help='Opal host; only yhe dns name, without protocol and port number.')
+@click.option(
+    '--admin-username',
+    '-u', 
+    default='administrator',
+    help='Administrator username of Opal host')
 @click.option(
     '--admin-password',
     '-p', 
@@ -38,7 +42,7 @@ from arguments import Arguments
     '-s', 
     default='beta',
     help='Status of data dictionary; can be beta or released.')        
-def populate(host, admin_password, cohort, version, status): 
+def populate(host, admin_username, admin_password, cohort, version, status): 
     '''
     This script will bootstrap the data dictionary version of the LifeCycle variables into Opal.
     '''
@@ -47,7 +51,7 @@ def populate(host, admin_password, cohort, version, status):
 
     args_project_bootstrap = Arguments({
         'headers': '',
-        'user': constants.CRED_ADMIN_USERNAME,
+        'user': admin_username,
         'password': admin_password,
         'content_type': 'application/json',
         'opal': host,
@@ -59,12 +63,12 @@ def populate(host, admin_password, cohort, version, status):
         'json': False
     })
 
-    rest.do_command(args_project_bootstrap)
+    ws.rest.do_command(args_project_bootstrap)
 
     print(u'\u2714' + ' bootstrap project: lifecycle_' + cohort)
 
     opal.file.do_command(Arguments({
-        'user': constants.CRED_ADMIN_USERNAME,
+        'user': admin_username,
         'password': admin_password,
         'content_type': 'multipart/form-data',
         'opal': host,
@@ -78,7 +82,7 @@ def populate(host, admin_password, cohort, version, status):
     print(u'\u2714' + ' upload metadata-file for table: ' + version + '_' + constants.DICT_MONTHLY_REPEATED_MEASURES)
 
     opal.file.do_command(Arguments({
-        'user': constants.CRED_ADMIN_USERNAME,
+        'user': admin_username,
         'password': admin_password,
         'content_type': 'multipart/form-data',
         'opal': host,
@@ -92,7 +96,7 @@ def populate(host, admin_password, cohort, version, status):
     print(u'\u2714' + ' upload metadata-file for table: ' + version + '_' + constants.DICT_YEARLY_REPEATED_MEASURES)
 
     opal.file.do_command(Arguments({
-        'user': constants.CRED_ADMIN_USERNAME,
+        'user': admin_username,
         'password': admin_password,
         'content_type': 'multipart/form-data',
         'opal': host,
@@ -108,7 +112,7 @@ def populate(host, admin_password, cohort, version, status):
     
     
     opal.import_xml.do_command(Arguments({
-        'user': constants.CRED_ADMIN_USERNAME,
+        'user': admin_username,
         'password': admin_password,
         'opal': host,
         'path': constants.UPLOAD_PATH + '/' + version + '_' + constants.DICT_MONTHLY_REPEATED_MEASURES + '.zip',
@@ -130,7 +134,7 @@ def populate(host, admin_password, cohort, version, status):
     print(u'\u2714' + ' bootstrap metadata for table: ' + version + '_' + status + '_' + constants.DICT_MONTHLY_REPEATED_MEASURES)
     
     opal.import_xml.do_command(Arguments({
-        'user': constants.CRED_ADMIN_USERNAME,
+        'user': admin_username,
         'password': admin_password,
         'opal': host,
         'path': constants.UPLOAD_PATH + '/' + version + '_' + constants.DICT_YEARLY_REPEATED_MEASURES + '.zip',
@@ -152,7 +156,7 @@ def populate(host, admin_password, cohort, version, status):
     print(u'\u2714' + ' bootstrap metadata for table: ' + version + '_' + status + '_' + constants.DICT_YEARLY_REPEATED_MEASURES)
     
     opal.import_xml.do_command(Arguments({
-        'user': constants.CRED_ADMIN_USERNAME,
+        'user': admin_username,
         'password': admin_password,
         'opal': host,
         'path': constants.UPLOAD_PATH + '/' + version + '_' + constants.DICT_NON_REPEATED_MEASURES + '.zip',

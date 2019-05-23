@@ -16,7 +16,7 @@ properties:
     description: The child unique identifier
     data:
       build: "chance.integer({ min: 1, max: 17 })"
-  cohort_id:
+  mother_id:
     type: integer
     description: The cohort unique identifier
     data:

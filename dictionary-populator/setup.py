@@ -4,7 +4,7 @@ from setuptools import setup
 setup(
     name='opal-populator',
     version='0.0.1',
-    packages=['populator'],
+    packages=['populator', 'populator.ws'],
     description='A command line interface to populate versions of datadictionaries in Opal',
     url='https://github.com/lifecycle-project/analysis-tools',
     author='Sido Haakma',

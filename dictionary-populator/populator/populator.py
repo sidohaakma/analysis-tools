@@ -47,7 +47,7 @@ def populate(host, admin_username, admin_password, cohort, version, status):
     This script will bootstrap the data dictionary version of the LifeCycle variables into Opal.
     '''
 
-    data = "{\"name\":\"" + constants.PROJECT_PREFIX + cohort + "\",\"title\":\"" + constants.PROJECT_PREFIX + cohort + "\",\"description\":\"" + constants.PROJECT_PREFIX + cohort + "\",\"database\":\"opal_data\",\"vcfStoreService\": null}"
+    data = "{\"name\":\"lifecycle\",\"title\":\"lifecycle\",\"description\":\"lifecycle\",\"database\":\"opal_data\",\"vcfStoreService\": null}"
 
     args_project_bootstrap = Arguments({
         'headers': '',
@@ -65,7 +65,7 @@ def populate(host, admin_username, admin_password, cohort, version, status):
 
     ws.rest.do_command(args_project_bootstrap)
 
-    print(u'\u2714' + ' bootstrap project: lifecycle_' + cohort)
+    print(u'\u2714' + ' bootstrap project: lifecycle')
 
     opal.file.do_command(Arguments({
         'user': admin_username,
@@ -116,7 +116,7 @@ def populate(host, admin_username, admin_password, cohort, version, status):
         'password': admin_password,
         'opal': host,
         'path': constants.UPLOAD_PATH + '/' + version + '_' + constants.DICT_MONTHLY_REPEATED_MEASURES + '.zip',
-        'destination': constants.PROJECT_PREFIX + cohort,
+        'destination': 'lifecycle',
         'tables': '',
         'separator': ',',
         'type': 'Participant',
@@ -138,7 +138,7 @@ def populate(host, admin_username, admin_password, cohort, version, status):
         'password': admin_password,
         'opal': host,
         'path': constants.UPLOAD_PATH + '/' + version + '_' + constants.DICT_YEARLY_REPEATED_MEASURES + '.zip',
-        'destination': constants.PROJECT_PREFIX + cohort,
+        'destination': 'lifecycle',
         'tables': '',
         'separator': ',',
         'type': 'Participant',
@@ -160,7 +160,7 @@ def populate(host, admin_username, admin_password, cohort, version, status):
         'password': admin_password,
         'opal': host,
         'path': constants.UPLOAD_PATH + '/' + version + '_' + constants.DICT_NON_REPEATED_MEASURES + '.zip',
-        'destination': constants.PROJECT_PREFIX + cohort,
+        'destination': 'lifecycle',
         'tables': '',
         'separator': ',',
         'type': 'Participant',

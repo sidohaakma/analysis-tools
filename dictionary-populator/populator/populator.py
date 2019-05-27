@@ -28,26 +28,16 @@ from arguments import Arguments
     prompt=True,
     help='Administrator password of Opal host')
 @click.option(
-    '--cohort',
-    '-c', 
-    prompt=True,
-    help='Cohort name; lowercase for example "gecko".')
-@click.option(
     '--version',
     '-v', 
     default='1_0',
     help='Version of data dictionary; can be x_x, for example 1_0.')
-@click.option(
-    '--status',
-    '-s', 
-    default='beta',
-    help='Status of data dictionary; can be beta or released.')        
-def populate(host, admin_username, admin_password, cohort, version, status): 
+def populate(host, admin_username, admin_password, version): 
     '''
     This script will bootstrap the data dictionary version of the LifeCycle variables into Opal.
     '''
 
-    data = "{\"name\":\"lifecycle\",\"title\":\"lifecycle\",\"description\":\"lifecycle\",\"database\":\"opal_data\",\"vcfStoreService\": null}"
+    data = "{\"name\":\"" + constants.PROJECT + "\",\"title\":\"" + constants.PROJECT + "\",\"description\":\"" + constants.PROJECT + "\",\"database\":\"opal_data\",\"vcfStoreService\": null}"
 
     args_project_bootstrap = Arguments({
         'headers': '',
@@ -79,7 +69,7 @@ def populate(host, admin_username, admin_password, cohort, version, status):
         'json': False
     }))
 
-    print(u'\u2714' + ' upload metadata-file for table: ' + version + '_' + constants.DICT_MONTHLY_REPEATED_MEASURES)
+    print(u'\u2714' + ' upload metadata-file for table: ' + version + '_'  + constants.DICT_MONTHLY_REPEATED_MEASURES)
 
     opal.file.do_command(Arguments({
         'user': admin_username,
@@ -131,7 +121,7 @@ def populate(host, admin_username, admin_password, cohort, version, status):
         'verbose': False,
         'json': False
     }))
-    print(u'\u2714' + ' bootstrap metadata for table: ' + version + '_' + status + '_' + constants.DICT_MONTHLY_REPEATED_MEASURES)
+    print(u'\u2714' + ' bootstrap metadata for table: ' + version + '_' + constants.DICT_MONTHLY_REPEATED_MEASURES)
     
     opal.import_xml.do_command(Arguments({
         'user': admin_username,
@@ -153,7 +143,7 @@ def populate(host, admin_username, admin_password, cohort, version, status):
         'verbose': False,
         'json': False
     }))
-    print(u'\u2714' + ' bootstrap metadata for table: ' + version + '_' + status + '_' + constants.DICT_YEARLY_REPEATED_MEASURES)
+    print(u'\u2714' + ' bootstrap metadata for table: ' + version + '_' + constants.DICT_YEARLY_REPEATED_MEASURES)
     
     opal.import_xml.do_command(Arguments({
         'user': admin_username,
@@ -176,5 +166,5 @@ def populate(host, admin_username, admin_password, cohort, version, status):
         'json': False
     }))
 
-    print(u'\u2714' + ' bootstrap metadata for table: ' + version + '_' + status + '_' + constants.DICT_NON_REPEATED_MEASURES)
+    print(u'\u2714' + ' bootstrap metadata for table: ' + version + '_' + constants.DICT_NON_REPEATED_MEASURES)
     

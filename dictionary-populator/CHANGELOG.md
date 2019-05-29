@@ -6,12 +6,14 @@ Additional variables from WP3.
 ### Content
 
 **EUSILC variables (task 3.1.1)**
+
 | Variable               | Description                                                                  | Datatype    |
 | ---------------------- | ---------------------------------------------------------------------------- | ----------- |
 | eusilc_income          | Log-equivalised total disposable household income predicted                  | continuous  |
 | eusilc_income_quintiles| Quintiles of the log-equivalised total disposable household income predicted | categorical |
 
 **Migration variables (task 3.1.x)** 
+
 | Variable     | Description                      | Datatype    |
 | ------------ | -------------------------------- | ----------- |
 | abroad_child | Child's born abroad	          | binary      |

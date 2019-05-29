@@ -1,10 +1,36 @@
 # Dictionary populator
+This python package installs published data dictionaries on your Opal system.
+
+For now we have three LifeCycle tables.
+
+- monthly_repeated_measures
+- yearly_repeated_measures
+- non_repeated_measures
+
+The versioning of the tables is included in the package.
 
 ##  Usage
-```bash
-pip install dictionary-populator
-```
+You first need to install Python on your system. Python 2.7.x to be precise.
 
+### Windows
+You need to download this version of Python and install it.
+
+https://www.python.org/downloads/release/python-2716/
+
+When you installed Python on your system you need to navigate to the commandline in Windows.
+
+### Mac
+You need to download this version of Python and install it.
+
+https://www.python.org/downloads/release/python-2716/
+
+When you installed Python on your system you need to navigate to a terminal on the Mac.
+
+Within the terminal you need to follow the instructins below.
+
+[install]: https://github.com/lifecycle-project/analysis-tools/raw/master/dictionary-populator/docs/images/mac_install_dictionary_populator.gif "Install dictionary populator on your system"
+
+[run]: https://github.com/lifecycle-project/analysis-tools/raw/master/dictionary-populator/docs/images/mac_run_dictionary_populator.gif "Run dictionary populator on your system"
 
 ## Develop
 Setup virtualenv.

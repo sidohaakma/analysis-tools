@@ -1,14 +1,11 @@
 #!python
 
-import opal.rest
-import opal.file
-import opal.import_xml
-
 import click
 import constants
-import ws.rest
 
-from arguments import Arguments
+from ws.project import createProject
+from ws.file import uploadFile
+from ws.dictionary import importDictionary
 
 @click.command()
 @click.option(
@@ -46,65 +43,3 @@ def populate(host, admin_username, admin_password, version):
     importDictionary(admin_username, admin_password, host, version, constants.PROJECT, constants.DICT_MONTHLY_REPEATED_MEASURES)
     importDictionary(admin_username, admin_password, host, version, constants.PROJECT, constants.DICT_YEARLY_REPEATED_MEASURES)
     importDictionary(admin_username, admin_password, host, version, constants.PROJECT, constants.DICT_NON_REPEATED_MEASURES)
-
-def createProject(admin_username, admin_password, host, project):
-    data = "{\"name\":\"" + constants.PROJECT + "\",\"title\":\"" + constants.PROJECT + "\",\"description\":\"" + constants.PROJECT + "\",\"database\":\"opal_data\",\"vcfStoreService\": null}"
-
-    args_project_bootstrap = Arguments({
-        'headers': '',
-        'user': admin_username,
-        'password': admin_password,
-        'content_type': 'application/json',
-        'opal': host,
-        'accept': 'application/json',
-        'method': 'POST',
-        'content': data,
-        'ws': '/projects',
-        'verbose': False,
-        'json': False
-    })
-
-    ws.rest.do_command(args_project_bootstrap)
-
-    print(u'\u2714' + ' bootstrap project: lifecycle')
-
-def uploadFile(admin_username, admin_password, host, version, dictionary):
-    
-    opal.file.do_command(Arguments({
-        'user': admin_username,
-        'password': admin_password,
-        'content_type': 'multipart/form-data',
-        'opal': host,
-        'path': constants.UPLOAD_PATH,
-        'upload': constants.UPLOAD_CLIENT_PATH+ '/'  + version + '_' + dictionary + '.zip',
-        'verbose': False,
-        'download': '',
-        'json': False
-    }))
-
-    print(u'\u2714' + ' upload metadata-file for table: ' + version + '_'  + dictionary)
-    
-
-def importDictionary(admin_username, admin_password, host, version, project, dictionary):
-    opal.import_xml.do_command(Arguments({
-        'user': admin_username,
-        'password': admin_password,
-        'opal': host,
-        'path': constants.UPLOAD_PATH + '/' + version + '_' + dictionary + '.zip',
-        'destination': project,
-        'tables': '',
-        'separator': ',',
-        'type': 'Participant',
-        'incremental': False,
-        'limit': 0,
-        'identifiers': '',
-        'policy': '',
-        'quote': '"',
-        'firstRow': '1',
-        'characterSet': 'ISO-8859-1',
-        'valueType': '',
-        'verbose': False,
-        'json': False
-    }))
-
-    print(u'\u2714' + ' bootstrap metadata for table: ' + version + '_' + dictionary)

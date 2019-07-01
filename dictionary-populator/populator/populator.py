@@ -1,14 +1,11 @@
 #!python
 
-import opal.rest
-import opal.file
-import opal.import_xml
-
 import click
 import constants
-import ws.rest
 
-from arguments import Arguments
+from ws.project import createProject
+from ws.file import uploadFile
+from ws.dictionary import importDictionary
 
 @click.command()
 @click.option(
@@ -28,153 +25,21 @@ from arguments import Arguments
     prompt=True,
     help='Administrator password of Opal host')
 @click.option(
-    '--cohort',
-    '-c', 
-    prompt=True,
-    help='Cohort name; lowercase for example "gecko".')
-@click.option(
     '--version',
     '-v', 
     default='1_0',
     help='Version of data dictionary; can be x_x, for example 1_0.')
-@click.option(
-    '--status',
-    '-s', 
-    default='beta',
-    help='Status of data dictionary; can be beta or released.')        
-def populate(host, admin_username, admin_password, cohort, version, status): 
+def populate(host, admin_username, admin_password, version): 
     '''
     This script will bootstrap the data dictionary version of the LifeCycle variables into Opal.
     '''
 
-    data = "{\"name\":\"lifecycle\",\"title\":\"lifecycle\",\"description\":\"lifecycle\",\"database\":\"opal_data\",\"vcfStoreService\": null}"
+    createProject(admin_username, admin_password, host, constants.PROJECT)
 
-    args_project_bootstrap = Arguments({
-        'headers': '',
-        'user': admin_username,
-        'password': admin_password,
-        'content_type': 'application/json',
-        'opal': host,
-        'accept': 'application/json',
-        'method': 'POST',
-        'content': data,
-        'ws': '/projects',
-        'verbose': False,
-        'json': False
-    })
+    uploadFile(admin_username, admin_password, host, version, constants.DICT_MONTHLY_REPEATED_MEASURES)
+    uploadFile(admin_username, admin_password, host, version, constants.DICT_YEARLY_REPEATED_MEASURES)
+    uploadFile(admin_username, admin_password, host, version, constants.DICT_NON_REPEATED_MEASURES)
 
-    ws.rest.do_command(args_project_bootstrap)
-
-    print(u'\u2714' + ' bootstrap project: lifecycle')
-
-    opal.file.do_command(Arguments({
-        'user': admin_username,
-        'password': admin_password,
-        'content_type': 'multipart/form-data',
-        'opal': host,
-        'path': constants.UPLOAD_PATH,
-        'upload': constants.UPLOAD_CLIENT_PATH+ '/'  + version + '_' + constants.DICT_MONTHLY_REPEATED_MEASURES + '.zip',
-        'verbose': False,
-        'download': '',
-        'json': False
-    }))
-
-    print(u'\u2714' + ' upload metadata-file for table: ' + version + '_' + constants.DICT_MONTHLY_REPEATED_MEASURES)
-
-    opal.file.do_command(Arguments({
-        'user': admin_username,
-        'password': admin_password,
-        'content_type': 'multipart/form-data',
-        'opal': host,
-        'path': constants.UPLOAD_PATH,
-        'upload': constants.UPLOAD_CLIENT_PATH+ '/'  + version + '_' + constants.DICT_YEARLY_REPEATED_MEASURES + '.zip',
-        'verbose': False,
-        'download': '',
-        'json': False
-    }))
-
-    print(u'\u2714' + ' upload metadata-file for table: ' + version + '_' + constants.DICT_YEARLY_REPEATED_MEASURES)
-
-    opal.file.do_command(Arguments({
-        'user': admin_username,
-        'password': admin_password,
-        'content_type': 'multipart/form-data',
-        'opal': host,
-        'path': constants.UPLOAD_PATH,
-        'upload': constants.UPLOAD_CLIENT_PATH + '/' + version + '_' + constants.DICT_NON_REPEATED_MEASURES + '.zip',
-        'verbose': False,
-        'download': '',
-        'json': False
-    }))
-    print(u'\u2714' + ' upload metadata-file for table: ' + version + '_' + constants.DICT_NON_REPEATED_MEASURES)
-
-    
-    
-    
-    opal.import_xml.do_command(Arguments({
-        'user': admin_username,
-        'password': admin_password,
-        'opal': host,
-        'path': constants.UPLOAD_PATH + '/' + version + '_' + constants.DICT_MONTHLY_REPEATED_MEASURES + '.zip',
-        'destination': 'lifecycle',
-        'tables': '',
-        'separator': ',',
-        'type': 'Participant',
-        'incremental': False,
-        'limit': 0,
-        'identifiers': '',
-        'policy': '',
-        'quote': '"',
-        'firstRow': '1',
-        'characterSet': 'ISO-8859-1',
-        'valueType': '',
-        'verbose': False,
-        'json': False
-    }))
-    print(u'\u2714' + ' bootstrap metadata for table: ' + version + '_' + status + '_' + constants.DICT_MONTHLY_REPEATED_MEASURES)
-    
-    opal.import_xml.do_command(Arguments({
-        'user': admin_username,
-        'password': admin_password,
-        'opal': host,
-        'path': constants.UPLOAD_PATH + '/' + version + '_' + constants.DICT_YEARLY_REPEATED_MEASURES + '.zip',
-        'destination': 'lifecycle',
-        'tables': '',
-        'separator': ',',
-        'type': 'Participant',
-        'incremental': False,
-        'limit': 0,
-        'identifiers': '',
-        'policy': '',
-        'quote': '"',
-        'firstRow': '1',
-        'characterSet': 'ISO-8859-1',
-        'valueType': '',
-        'verbose': False,
-        'json': False
-    }))
-    print(u'\u2714' + ' bootstrap metadata for table: ' + version + '_' + status + '_' + constants.DICT_YEARLY_REPEATED_MEASURES)
-    
-    opal.import_xml.do_command(Arguments({
-        'user': admin_username,
-        'password': admin_password,
-        'opal': host,
-        'path': constants.UPLOAD_PATH + '/' + version + '_' + constants.DICT_NON_REPEATED_MEASURES + '.zip',
-        'destination': 'lifecycle',
-        'tables': '',
-        'separator': ',',
-        'type': 'Participant',
-        'incremental': False,
-        'limit': 0,
-        'identifiers': '',
-        'policy': '',
-        'quote': '"',
-        'firstRow': '1',
-        'characterSet': 'ISO-8859-1',
-        'valueType': '',
-        'verbose': False,
-        'json': False
-    }))
-
-    print(u'\u2714' + ' bootstrap metadata for table: ' + version + '_' + status + '_' + constants.DICT_NON_REPEATED_MEASURES)
-    
+    importDictionary(admin_username, admin_password, host, version, constants.PROJECT, constants.DICT_MONTHLY_REPEATED_MEASURES)
+    importDictionary(admin_username, admin_password, host, version, constants.PROJECT, constants.DICT_YEARLY_REPEATED_MEASURES)
+    importDictionary(admin_username, admin_password, host, version, constants.PROJECT, constants.DICT_NON_REPEATED_MEASURES)

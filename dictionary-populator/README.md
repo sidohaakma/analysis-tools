@@ -28,7 +28,7 @@ When you installed Python on your system you need to navigate to a terminal on t
 
 Within the terminal you need to follow the instructins below.
 
-[install](https://github.com/lifecycle-project/analysis-tools/raw/master/dictionary-populator/docs/images/mac_install_dictionary_populator.gif)
+![install](https://github.com/lifecycle-project/analysis-tools/raw/master/dictionary-populator/docs/images/mac_install_dictionary_populator.gif "Install dictionary populator on your system")
 
 ## Develop
 Setup virtualenv.

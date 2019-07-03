@@ -1,7 +1,7 @@
 #!python
 
 import click
-import constants
+import ws.constants
 
 from ws.project import createProject
 from ws.file import uploadFile
@@ -34,12 +34,12 @@ def populate(host, admin_username, admin_password, version):
     This script will bootstrap the data dictionary version of the LifeCycle variables into Opal.
     '''
 
-    createProject(admin_username, admin_password, host, constants.PROJECT)
+    createProject(admin_username, admin_password, host)
 
-    uploadFile(admin_username, admin_password, host, version, constants.DICT_MONTHLY_REPEATED_MEASURES)
-    uploadFile(admin_username, admin_password, host, version, constants.DICT_YEARLY_REPEATED_MEASURES)
-    uploadFile(admin_username, admin_password, host, version, constants.DICT_NON_REPEATED_MEASURES)
+    uploadFile(admin_username, admin_password, host, version, ws.constants.DICT_MONTHLY_REPEATED_MEASURES)
+    uploadFile(admin_username, admin_password, host, version, ws.constants.DICT_YEARLY_REPEATED_MEASURES)
+    uploadFile(admin_username, admin_password, host, version, ws.constants.DICT_NON_REPEATED_MEASURES)
 
-    importDictionary(admin_username, admin_password, host, version, constants.PROJECT, constants.DICT_MONTHLY_REPEATED_MEASURES)
-    importDictionary(admin_username, admin_password, host, version, constants.PROJECT, constants.DICT_YEARLY_REPEATED_MEASURES)
-    importDictionary(admin_username, admin_password, host, version, constants.PROJECT, constants.DICT_NON_REPEATED_MEASURES)
+    importDictionary(admin_username, admin_password, host, version, ws.constants.DICT_MONTHLY_REPEATED_MEASURES)
+    importDictionary(admin_username, admin_password, host, version, ws.constants.DICT_YEARLY_REPEATED_MEASURES)
+    importDictionary(admin_username, admin_password, host, version, ws.constants.DICT_NON_REPEATED_MEASURES)

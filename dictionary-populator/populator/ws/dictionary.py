@@ -1,16 +1,17 @@
 #!python
 
+import constants
 import opal.import_xml
 
 from utils.arguments import Arguments
 
-def importDictionary(admin_username, admin_password, host, version, project, dictionary):
+def importDictionary(admin_username, admin_password, host, version, dictionary):
     opal.import_xml.do_command(Arguments({
         'user': admin_username,
         'password': admin_password,
         'opal': host,
-        'path': UPLOAD_PATH + '/' + version + '_' + dictionary + '.zip',
-        'destination': project,
+        'path': constants.UPLOAD_PATH + '/' + version + '_' + dictionary + '.zip',
+        'destination': constants.PROJECT,
         'tables': '',
         'separator': ',',
         'type': 'Participant',

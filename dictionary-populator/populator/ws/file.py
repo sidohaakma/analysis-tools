@@ -1,10 +1,10 @@
 #!python
 
 import opal.file
+import constants
 
 from utils.arguments import Arguments
 
-UPLOAD_PATH = '/home/administrator'
 UPLOAD_CLIENT_PATH = 'dictionaries'
 
 def uploadFile(admin_username, admin_password, host, version, dictionary):
@@ -14,7 +14,7 @@ def uploadFile(admin_username, admin_password, host, version, dictionary):
         'password': admin_password,
         'content_type': 'multipart/form-data',
         'opal': host,
-        'path': UPLOAD_PATH,
+        'path': constants.UPLOAD_PATH,
         'upload': UPLOAD_CLIENT_PATH+ '/'  + version + '_' + dictionary + '.zip',
         'verbose': False,
         'download': '',

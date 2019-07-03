@@ -1,13 +1,12 @@
 #!python
 
 import rest
+import constants
 
 from utils.arguments import Arguments
 
-PROJECT = 'lifecycle'
-
-def createProject(admin_username, admin_password, host, project):
-    data = "{\"name\":\"" + PROJECT + "\",\"title\":\"" + PROJECT + "\",\"description\":\"" + PROJECT + "\",\"database\":\"opal_data\",\"vcfStoreService\": null}"
+def createProject(admin_username, admin_password, host):
+    data = "{\"name\":\"" + constants.PROJECT + "\",\"title\":\"" + constants.PROJECT + "\",\"description\":\"" + constants.PROJECT + "\",\"database\":\"opal_data\",\"vcfStoreService\": null}"
 
     args_project_bootstrap = Arguments({
         'headers': '',
@@ -23,6 +22,6 @@ def createProject(admin_username, admin_password, host, project):
         'json': False
     })
 
-    ws.rest.do_command(args_project_bootstrap)
+    rest.do_command(args_project_bootstrap)
 
-    print(u'\u2714' + ' bootstrap project: lifecycle')
+    print(u'\u2714' + ' bootstrap project: ' + constants.PROJECT)

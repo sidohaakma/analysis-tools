@@ -74,7 +74,7 @@ source env/bin/activate
 python setup.py bdist_wheel
 
 # upload it into the molgenis pypi registry
-twine 
+twine upload --repository-url https://registry.molgenis.org/repository/pypi/  dist/*
 ```
 
 

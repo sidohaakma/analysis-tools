@@ -7,6 +7,7 @@ Additional variables from WP3 and changes in the lifecycle variables.
 
 **LifeCycle variables**
 * art --> variable_id changed from **art** to **mar**
+
   >note: be adviced: all harmonisations of all cohorts need te upload this variable again with the new name
 * preg_plan --> values updated from ( 0 = No (not planned) / 1 = Yes (Planned, partly planned)) to ( 1 = Yes (Planned, partly planned) / 2 = No (not planned))
 

@@ -1,9 +1,14 @@
 # Versions of data dictionaries
 
 ## 1.1
-Additional variables from WP3.
+Additional variables from WP3 and changes in the lifecycle variables.
 
 ### Content
+
+**LifeCycle variables**
+* art --> variable_id changed from **art** to **mar**
+  >note: be adviced: all harmonisations of all cohorts need te upload this variable again with the new name
+* preg_plan --> values updated from ( 0 = No (not planned) / 1 = Yes (Planned, partly planned)) to ( 1 = Yes (Planned, partly planned) / 2 = No (not planned))
 
 **EUSILC variables (task 3.1.1)**
 

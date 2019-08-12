@@ -17,7 +17,27 @@ You need to download this version of Python and install it.
 
 https://www.python.org/downloads/release/python-2716/
 
-When you installed Python on your system you need to navigate to the commandline in Windows.
+Then add Python to the Windows PATH.
+
+```
+## Python installation path e.g.
+setx PATH "%PATH%;C:\Python27
+```
+
+When you installed Python on your system you need to install **pip** by navigating to:
+
+https://bootstrap.pypa.io/get-pip.py
+
+You need to add pip to the Windows PATH as well.
+
+```
+## Python installation path e.g.
+setx PATH "%PATH%;C:\Python27\Scripts
+```
+
+Now your set to install the dictionary-populator. Please navigate to the Windows Commandline interface by clicking on *Start* --> *Search* and type **cmd**.
+
+```pip install dictionary-populator```
 
 ### Mac
 You need to download this version of Python and install it.
@@ -53,8 +73,7 @@ Install the package within the virtual env. First you need to install the opal-c
 
 ```bash
 export PYCURL_SSL_LIBRARY=openssl
-export LDFLAGS=-L/usr/local/opt/openssl/lib;export CPPFLAGS=-I/usr/local/opt/openssl/include;pip install opal-python-client --compi
-le --no-cache-dir -i https://registry.molgenis.org/repository/pypi-all/
+export LDFLAGS=-L/usr/local/opt/openssl/lib;export CPPFLAGS=-I/usr/local/opt/openssl/include;pip install opal-python-client --compile --no-cache-dir -i https://registry.molgenis.org/repository/pypi-all/
 ```
 
 ```bash

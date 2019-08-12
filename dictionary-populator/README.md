@@ -37,7 +37,7 @@ setx PATH "%PATH%;C:\Python27\Scripts
 
 Now your set to install the dictionary-populator. Please navigate to the Windows Commandline interface by clicking on *Start* --> *Search* and type **cmd**.
 
-```pip install dictionary-populator```
+```pip install  --extra-index-url https://registry.molgenis.org/repository/pypi dictionary-populator```
 
 ### Mac
 You need to download this version of Python and install it.

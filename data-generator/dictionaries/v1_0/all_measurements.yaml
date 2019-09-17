@@ -1,4 +1,4 @@
-name: all_measurements_v1_2
+name: all_measurements_v1_3
 type: object
 key:
   build: faker.random.uuid()
@@ -277,9 +277,9 @@ properties:
     description: Planned pregnancy
     data: 
       build: "chance.integer({ min: 1, max: 120 })"
-  art:
+  mar:
     type: integer
-    description: ART (Assisted reproductive treatment)
+    description: MAR (Assisted reproductive treatment)
     data: 
       build: "chance.integer({ min: 1, max: 120 })"
   ivf:

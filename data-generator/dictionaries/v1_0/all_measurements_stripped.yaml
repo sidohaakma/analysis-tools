@@ -37,11 +37,6 @@ properties:
     description: Country of the cohort
     data:
       build: "chance.integer({ min: 36, max: 826 })"
-  recruit_age:
-    type: integer
-    description: Reqruitment age
-    data:
-      build: "chance.integer({ min: 1, max: 20 })"
   cob_m:
     type: integer
     description: Maternal country of birth

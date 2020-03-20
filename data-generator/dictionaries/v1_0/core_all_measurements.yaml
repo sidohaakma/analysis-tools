@@ -1,4 +1,4 @@
-name: all_measurements_v1_3
+name: core_all_measurements_v1_3
 type: object
 key:
   build: faker.random.uuid()

@@ -1,4 +1,4 @@
-ame: outcome_all_measurements_v1_0
+name: outcome_all_measurements_v1_0
 type: object
 key:
   build: faker.random.uuid()
@@ -7,18 +7,13 @@ data:
   max: 10000000
 properties:
 ## single measurements
-  mother_id:
-    type: integer
-    description: An auto-incrementing number
-    data:
-      build: document_index
   child_id:
     type: integer
     description: The child unique identifier
     data:
-      build: "chance.integer({ min: 1, max: 17 })"
+      build: document_index
   pets_preg:
-    type: integer
+    type: integercd 
     description: Furry pet
     data:
       build: "chance.integer({ min: 0, max: 1 })"
@@ -42,28 +37,323 @@ properties:
     description: Currently has asthma (ISAAC interpretation)
     data:
       build: "chance.integer({ min: 0, max: 1 })"
-  eczema_ever:
+  allergy_any_m:
     type: integer
     description: Had or has exzema
     data:
       build: "chance.integer({ min: 0, max: 1 })"
-  asthma_adult:
+  asthma_ever_CHICOS:
     type: integer
     description: Had or has astham (adult)
     data:
       build: "chance.integer({ min: 0, max: 1 })"
-  COPD_adult_GOLD:
+  asthma_ever_MeDALL:
     type: integer
     description: Had or has COPD (GOLD interpretation, adult)
     data:
       build: "chance.integer({ min: 0, max: 1 })"
-  COPD_adult_LLN:
+  asthma_current_MeDALL:
     type: integer
     description: Had or has COPD (LLN interpretation, adult)
     data:
       build: "chance.integer({ min: 0, max: 1 })"
-  COPD_adult_diagnosis:
+  asthma_current_ISAAC:
     type: integer
     description: Had or has COPD (diagnosed, adult)
     data:
       build: "chance.integer({ min: 0, max: 1 })"
+  allergy_inh_m:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  anaphylaxis:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  asthma_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  asthma_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  asthma_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  asthma_4:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  asthma_med_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  asthma_med_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  asthma_med_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  asthma_med_4:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  asthma_med_spec_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  asthma_med_spec_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  asthma_med_spec_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  asthma_med_spec_4:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  whe_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"
+  whe_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"  
+  whe_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"  
+  whe_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"  
+  whe_4:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"  
+  FEV1_z_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"  
+  FEV1_z_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"  
+  FEV1_z_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  FVC_z_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  FVC_z_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  FVC_z_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  FVC_z_4:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  FEV1FVC_z_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"       
+  FEV1FVC_z_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  FEV1FVC_z_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  FEV1FVC_z_4:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  repro_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  repro_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  repro_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  repro_4:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  FeNO_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  FeNO_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  FeNO_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"      
+  FeNO_4:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })" 
+  inh_all_sens_SPT_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"        
+  inh_all_sens_SPT_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"        
+  inh_all_sens_SPT_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"        
+  inh_all_sens_SPT_4:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"    
+  inh_all_sens_IgE_HDM_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"         
+  inh_all_sens_IgE_HDM_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"         
+  inh_all_sens_IgE_HDM_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"         
+  inh_all_sens_IgE_HDM_4:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"         
+  inh_all_sens_IgE_CAT_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"   
+  inh_all_sens_IgE_CAT_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"   
+  inh_all_sens_IgE_CAT_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"   
+  inh_all_sens_IgE_CAT_4:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"   
+  inh_all_sens_IgE_RYE_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"   
+  inh_all_sens_IgE_RYE_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"   
+  inh_all_sens_IgE_RYE_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"   
+  inh_all_sens_IgE_RYE_4:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"   
+  inh_all_sens_IgE_MOULD_1:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"   
+  inh_all_sens_IgE_MOULD_2:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"   
+  inh_all_sens_IgE_MOULD_3:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"   
+  inh_all_sens_IgE_MOULD_4:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"   
+  inh_all_sens_IgE_MOULD_5:
+    type: integer
+    description: Had or has COPD (diagnosed, adult)
+    data:
+      build: "chance.integer({ min: 0, max: 1 })"   

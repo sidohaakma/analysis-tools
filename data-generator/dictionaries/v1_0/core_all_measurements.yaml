@@ -7,16 +7,16 @@ data:
   max: 10000000
 properties:
 ## single measurements
-  mother_id:
-    type: integer
-    description: An auto-incrementing number
-    data:
-      build: document_index
   child_id:
     type: integer
     description: The child unique identifier
     data:
-      build: "chance.integer({ min: 1, max: 17 })"
+      build: document_index
+  mother_id:
+    type: integer
+    description: An auto-incrementing number
+    data:
+      build: "chance.integer({ min: 1, max: 5 })"
   cohort_id:
     type: integer
     description: The cohort unique identifier
@@ -25,6 +25,11 @@ properties:
   preg_no:
     type: integer
     description: Pregnancy number
+    data:
+      build: document_index
+  not_in_dict:
+    type: integer
+    description: Not in dictionary value
     data:
       build: document_index
   child_no:
@@ -552,6 +557,26 @@ properties:
     description: Age child started in child care
     data: 
       build: "chance.integer({ min: 1, max: 120 })"
+  cats_preg:
+    type: integer
+    description: Cats
+    data: 
+      build: "chance.integer({ min: 1, max: 10 })"
+  dogs_preg:
+    type: integer
+    description: Dogs
+    data: 
+      build: "chance.integer({ min: 1, max: 10 })"
+  cats_quant_preg:
+    type: integer
+    description: How many cats
+    data: 
+      build: "chance.integer({ min: 1, max: 10 })"
+  dogs_quant_preg:
+    type: integer
+    description: How many dogs
+    data: 
+      build: "chance.integer({ min: 1, max: 10 })"
 ## repeated measurements
   cohab_0:
     type: integer
@@ -2169,6 +2194,391 @@ properties:
     data: 
       build: "chance.integer({ min: 1, max: 120 })"
   pets_17:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  pets_18:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_0:
+    type: integer
+    description: Furry pet ownership at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_1:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_2:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_3:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_4:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_5:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_6:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_7:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_8:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_9:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"                  
+  cats_10:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_11:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_12:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_13:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_14:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_15:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"                  
+  cats_16:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_17:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_18:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_0:
+    type: integer
+    description: Furry pet ownership at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_1:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_2:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_3:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_4:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_5:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_6:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_7:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_8:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_9:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"                  
+  dogs_10:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_11:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_12:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_13:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_14:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_15:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"                  
+  dogs_16:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_17:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_18:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_0:
+    type: integer
+    description: Furry pet ownership at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_1:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_2:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_3:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_4:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_5:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_6:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_7:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_8:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_9:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"                  
+  cats_quant_10:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_11:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_12:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_13:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_14:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_15:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"                  
+  cats_quant_16:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_17:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  cats_quant_18:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_0:
+    type: integer
+    description: Furry pet ownership at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_1:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_2:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_3:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_4:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_5:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_6:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_7:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_8:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_9:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"                  
+  dogs_quant_10:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_11:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_12:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_13:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_14:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_15:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"                  
+  dogs_quant_16:
+    type: integer
+    description: Maternal education at birth
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_17:
+    type: integer
+    description: Maternal education at 1 year
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  dogs_quant_18:
     type: integer
     description: Maternal education at 1 year
     data: 

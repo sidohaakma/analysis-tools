@@ -1,0 +1,34 @@
+name: outcome_all_measurements_v1_0
+type: object
+key:
+  build: faker.random.uuid()
+data:
+  min: 10
+  max: 10000000
+properties:
+## single measurements
+  child_id:
+    type: integer
+    description: The child unique identifier
+    data:
+      build: document_index
+  lden_preg:
+    type: decimal
+    description: Day level at pregnancy
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  ln_preg:
+    type: decimal
+    description: Night level at pregnancy
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  pm10_preg:
+    type: decimal
+    description: pm10 average value (extrapolated back in time using ratio method) during pregnancy
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  nox_preg:
+    type: decimal
+    description: nox average value (extrapolated back in time using ratio method) during pregnancy
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"

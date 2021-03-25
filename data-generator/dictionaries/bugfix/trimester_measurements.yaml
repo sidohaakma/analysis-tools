@@ -1,0 +1,34 @@
+name: trimester_measures
+type: object
+key:
+  build: faker.random.uuid()
+data:
+  min: 10
+  max: 10000000
+properties:
+## single measurements
+  child_id:
+    type: integer
+    description: The child unique identifier
+    data:
+      build: document_index
+  smk_t2:
+    type: integer
+    description: Smoking 2nd trimester
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  smk_t3:
+    type: integer
+    description: Smoking 3rd trimester
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  alc_t2:
+    type: integer
+    description: Any alcohol intake in 2. trimester
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"
+  alc_t3:
+    type: integer
+    description: Any alcohol intake in 3. trimester
+    data: 
+      build: "chance.integer({ min: 1, max: 120 })"

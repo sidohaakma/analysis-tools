@@ -11,7 +11,9 @@ You need the following tools to use the data-generator:
 - [git](https://git-scm.com/downloads)
 
 ### Installation
-The installation of the different packages is more or less the same over different platforms. We still have documentation for [Mac](#Mac-installation) and [Windows](#Windows-installation)
+The installation of the different packages is more or less the same over different platforms. We still have documentation for [Mac](#Mac-installation) and [Windows](#Windows-installation).
+
+PLease use node version =< v10.x
 
 #### Mac - installation
 
@@ -70,7 +72,7 @@ Open a terminal and navigate to the `~/lifecycle-project/analysis-tools/` reposi
 ```bash
 cd ~/lifecycle/analysis-tools/data-generator; 
 
-fakeit directory output --verbose --count 3000 --format csv dictionaries/
+fakeit directory output --verbose --count 3000 --format csv dictionaries #(to generate specific file /directory/file)
 
 ```
 You can check the help by executing this command:
@@ -86,10 +88,16 @@ Open a commandline interface (execute ```cmd```.
 
 Navigate to the `~/lifecycle-project/analysis-tools` repository:
 
-```batch
+```bash
 cd ~/lifecycle/analysis-tools/data-generator; 
 
 fakeit directory output --verbose --count 3000 --format csv dictionaries/
+```
+
+If you need more memory you need to add this flag to the command:
+
+```bash
+NODE_OPTIONS=--max_old_space_size=8192 && fakeit directory output --verbose --count 3000 --format csv dictionaries/
 ```
 
 You can check the help by executing this command:

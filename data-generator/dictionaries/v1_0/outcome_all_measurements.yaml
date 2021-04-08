@@ -41,27 +41,7 @@ properties:
     type: integer
     description: Had or has exzema
     data:
-      build: "chance.integer({ min: 0, max: 1 })"
-  asthma_ever_CHICOS:
-    type: integer
-    description: Had or has astham (adult)
-    data:
-      build: "chance.integer({ min: 0, max: 1 })"
-  asthma_ever_MeDALL:
-    type: integer
-    description: Had or has COPD (GOLD interpretation, adult)
-    data:
-      build: "chance.integer({ min: 0, max: 1 })"
-  asthma_current_MeDALL:
-    type: integer
-    description: Had or has COPD (LLN interpretation, adult)
-    data:
-      build: "chance.integer({ min: 0, max: 1 })"
-  asthma_current_ISAAC:
-    type: integer
-    description: Had or has COPD (diagnosed, adult)
-    data:
-      build: "chance.integer({ min: 0, max: 1 })"
+      build: "chance.integer({ min: 0, max: 1 })"  
   allergy_inh_m:
     type: integer
     description: Had or has COPD (diagnosed, adult)

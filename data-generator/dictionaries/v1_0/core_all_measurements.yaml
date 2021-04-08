@@ -503,10 +503,10 @@ properties:
     data: 
       build: "chance.integer({ min: 1, max: 120 })"
   con_anomalies: 
-    type: integer
+    type: string
     description: Any congenital anomaly
     data: 
-      build: "chance.integer({ min: 1, max: 120 })"
+      value: NA
   major_con_anomalies: 
     type: integer
     description: Severe congenital anomaly
@@ -548,10 +548,10 @@ properties:
     data: 
       build: "chance.integer({ min: 1, max: 120 })"
   solid_food:
-    type: integer
+    type: string
     description: Age solid food introduced
     data: 
-      build: "chance.integer({ min: 1, max: 120 })"
+      value: ''
   childcare_intro:
     type: decimal
     description: Age child started in child care
